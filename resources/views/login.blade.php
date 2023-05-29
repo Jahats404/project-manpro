@@ -14,7 +14,7 @@
     <div class="row justify-content-center" style="margin:20px;">
       <div class="col-lg-6 col-md-8 login-box">
         <div class="col-lg-12 login-title">
-          Login Trikau
+          Login triji
         </div>
         <div class="col-lg-12 login-form">
           <form action="{{ route('postLogin') }}" method="POST">
