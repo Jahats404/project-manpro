@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tembakau extends Model
 {
     use HasFactory;
-    protected $table = 'tembakau';
+    protected $table = 'tembakau';    
+    protected $guarded = [];
 }

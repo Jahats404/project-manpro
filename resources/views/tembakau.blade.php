@@ -112,90 +112,33 @@
     <div class="container-fluid page-body-wrapper">
       
       <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="user-profile">
-          <div class="user-image">
-            <img src="../../images/faces/face28.png">
-          </div>
-          <div class="user-name">
-              Edward Spencer
-          </div>
-          <div class="user-designation">
-              Developer
-          </div>
-        </div>
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-              <i class="icon-box menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-disc menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/forms/basic_elements.html">
-              <i class="icon-file menu-icon"></i>
-              <span class="menu-title">Form elements</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/charts/chartjs.html">
-              <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
-              <i class="icon-command menu-icon"></i>
-              <span class="menu-title">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/feather-icons.html">
-              <i class="icon-help menu-icon"></i>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../docs/documentation.html">
-              <i class="icon-book menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      @include('layout.menu')
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
+          <div class="row">            
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Default form</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+                  <form method="POST" action="/tembakau/store" class="forms-sample">
+                    @csrf
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">ID</label>
+                      <input type="text" class="form-control" name="kode" id="exampleInputUsername1" placeholder="ID">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Rasa</label>
+                      <input type="text" class="form-control" name="rasa" id="exampleInputUsername1" placeholder="Username">
+                    </div>                                        
+                    <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> Tambahkan</button>                    
+                  </form>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -204,11 +147,12 @@
                     Add class <code>.table</code>
                   </p>
                   <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>No</th>
+                          <th>ID</th>
                           <th>Rasa</th>
+                          <th>Aksi</th>
                           {{-- <th>Created</th>
                           <th>Status</th> --}}
                         </tr>
@@ -216,64 +160,20 @@
                       <tbody>
                         @foreach ($tembakau as $t)
                         <tr>
-                          <td>{{ $t->id }}</td>
+                          <td>{{ $t->kode }}</td>
                           <td>{{ $t->rasa }}</td>
+                          <td>
+                            <button type="button" class="btn btn-dark btn-icon-text btn-sm">
+                              Edit
+                              
+                            </button>
+                            <button type="button" class="btn btn-danger btn-icon-text btn-sm">
+                              
+                              Warning
+                            </button>
+                          </td>
                         </tr>                        
                         @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Hoverable Table</h4>
-                  <p class="card-description">
-                    Add class <code>.table-hover</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>User</th>
-                          <th>Product</th>
-                          <th>Sale</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Jacob</td>
-                          <td>Photoshop</td>
-                          <td class="text-success"> 28.76% <i class="mdi mdi-arrow-up"></i></td>
-                          <td><label class="badge badge-danger">Pending</label></td>
-                        </tr>
-                        <tr>
-                          <td>Messsy</td>
-                          <td>Flash</td>
-                          <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
-                        <tr>
-                          <td>John</td>
-                          <td>Premier</td>
-                          <td class="text-success"> 35.00% <i class="mdi mdi-arrow-up"></i></td>
-                          <td><label class="badge badge-info">Fixed</label></td>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>After effects</td>
-                          <td class="text-danger"> 82.00% <i class="mdi mdi-arrow-down"></i></td>
-                          <td><label class="badge badge-success">Completed</label></td>
-                        </tr>
-                        <tr>
-                          <td>Dave</td>
-                          <td>53275535</td>
-                          <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>

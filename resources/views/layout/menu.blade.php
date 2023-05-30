@@ -18,9 +18,9 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('tambahRasa') }}">
+        <a class="nav-link" href="{{ route('tembakau') }}">
           <i class="icon-file menu-icon"></i>
-          <span class="menu-title">Tambah Rasa</span>
+          <span class="menu-title">Tembakau</span>
         </a>
       </li>
       <li class="nav-item">
