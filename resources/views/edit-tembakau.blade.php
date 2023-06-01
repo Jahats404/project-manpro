@@ -120,102 +120,24 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Basic form elements</h4>
+                  <h4 class="card-title">Form Edit</h4>
                   <p class="card-description">
-                    Basic form elements
+                    Edit Tembakau
                   </p>
-                  <form class="forms-sample">
+                  <form class="forms-sample" action="/tembakau/{{ $tembakau->id }}" method="POST">
+                    @method('put')
+                    @csrf
                     <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                      <label for="exampleInputName1">ID</label>
+                      <input type="text" class="form-control" id="exampleInputName1" name="kode" placeholder="ID" value="{{ $tembakau->kode }}">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                      <label for="exampleInputName1">Rasa</label>
+                      <input type="text" class="form-control" id="exampleInputName1" name="rasa" placeholder="Rasa" value="{{ $tembakau->rasa }}">
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </div>
-                    <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">City</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleTextarea1">Textarea</label>
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" name="submit" value="update" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>
                   </form>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin-lg-0 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Select 2</h4>
-                  <div class="form-group">
-                    <label>Single select box using select 2</label>
-                    <select class="js-example-basic-single w-100">
-                      <option value="AL">Alabama</option>
-                      <option value="WY">Wyoming</option>
-                      <option value="AM">America</option>
-                      <option value="CA">Canada</option>
-                      <option value="RU">Russia</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label>Multiple select using select 2</label>
-                    <select class="js-example-basic-multiple w-100" multiple="multiple">
-                      <option value="AL">Alabama</option>
-                      <option value="WY">Wyoming</option>
-                      <option value="AM">America</option>
-                      <option value="CA">Canada</option>
-                      <option value="RU">Russia</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin-lg-0 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Typeahead</h4>
-                  <p class="card-description">
-                    A simple suggestion engine
-                  </p>
-                  <div class="form-group row">
-                    <div class="col">
-                      <label>Basic</label>
-                      <div id="the-basics">
-                        <input class="typeahead" type="text" placeholder="States of USA">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <label>Bloodhound</label>
-                      <div id="bloodhound">
-                        <input class="typeahead" type="text" placeholder="States of USA">
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

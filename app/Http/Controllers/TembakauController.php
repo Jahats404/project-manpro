@@ -13,7 +13,7 @@ class TembakauController extends Controller
 
     public function mbako(){
         $tembakau = Tembakau::all();
-        return view('tembakau', compact('tembakau'));        
+        return view('tembakau', compact(['tembakau']));        
     }
 
     public function create(){
@@ -27,6 +27,12 @@ class TembakauController extends Controller
 
     public function edit($id){
         $tembakau = Tembakau::find($id);
-        dd($tembakau);
+        return view('edit-tembakau',compact(['tembakau']));
+    }
+
+    public function update($id, Request $request){
+        $tembakau = Tembakau::find($id);
+        $tembakau->update($request->except(['_token','submit']));
+        return redirect('/tembakau');
     }
 }
