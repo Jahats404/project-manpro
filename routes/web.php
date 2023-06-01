@@ -23,3 +23,7 @@ Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogi
 Route::get('/tembakau', [TembakauController::class, 'mbako'])->name('tembakau');
 Route::get('/tembakau/create', [TembakauController::class, 'create'])->name('create');
 Route::post('/tembakau/store', [TembakauController::class, 'store'])->name('store');
+Route::get('/tembakau/{kode}/edit', [TembakauController::class, 'edit'])->name('edit');
+Route::get('/modal', function () {
+    return view('modal');
+});

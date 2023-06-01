@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tembakau', function (Blueprint $table) {
+            $table->id();
             $table->string('kode');
             $table->string('rasa');
             $table->timestamps();

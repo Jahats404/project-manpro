@@ -131,8 +131,8 @@
                       <input type="text" class="form-control" name="kode" id="exampleInputUsername1" placeholder="ID">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Rasa</label>
-                      <input type="text" class="form-control" name="rasa" id="exampleInputUsername1" placeholder="Username">
+                      <label for="rasa">Rasa</label>
+                      <input type="text" class="form-control" name="rasa" id="rasa" placeholder="rasa">
                     </div>                                        
                     <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> Tambahkan</button>                    
                   </form>
@@ -163,14 +163,15 @@
                           <td>{{ $t->kode }}</td>
                           <td>{{ $t->rasa }}</td>
                           <td>
-                            <button type="button" class="btn btn-dark btn-icon-text btn-sm">
-                              Edit
-                              
+                            <a href="/tembakau/{{ $t->id }}/edit">
+                              <button type="button" class="btn btn-dark btn-icon-text btn-sm">Edit
                             </button>
-                            <button type="button" class="btn btn-danger btn-icon-text btn-sm">
-                              
-                              Warning
-                            </button>
+                            </a>
+                            <a href="">
+                              <button type="button" class="btn btn-danger btn-icon-text btn-sm">
+                                Warning
+                              </button>
+                            </a>
                           </td>
                         </tr>                        
                         @endforeach

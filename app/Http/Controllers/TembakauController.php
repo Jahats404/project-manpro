@@ -24,4 +24,9 @@ class TembakauController extends Controller
         Tembakau::create($request->except(['_token','submit']));
         return redirect('/tembakau');
     }
+
+    public function edit($id){
+        $tembakau = Tembakau::find($id);
+        dd($tembakau);
+    }
 }
