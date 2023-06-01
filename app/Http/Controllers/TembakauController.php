@@ -35,4 +35,10 @@ class TembakauController extends Controller
         $tembakau->update($request->except(['_token','submit']));
         return redirect('/tembakau');
     }
+
+    public function destroy($id){
+        $tembakau = Tembakau::find($id);
+        $tembakau -> delete();
+        return redirect('/tembakau');
+    }
 }

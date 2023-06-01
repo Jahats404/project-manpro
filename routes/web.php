@@ -25,6 +25,7 @@ Route::get('/tembakau/create', [TembakauController::class, 'create'])->name('cre
 Route::post('/tembakau/store', [TembakauController::class, 'store'])->name('store');
 Route::get('/tembakau/{id}/edit', [TembakauController::class, 'edit'])->name('edit');
 Route::put('/tembakau/{id}', [TembakauController::class, 'update'])->name('update');
+Route::delete('/tembakau/{id}', [TembakauController::class, 'destroy'])->name('destroy');
 
 
 // Route::get('/update', function () {

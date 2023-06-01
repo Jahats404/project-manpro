@@ -149,10 +149,10 @@
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
-                        <tr>
+                        <tr class="table-primary">
                           <th>ID</th>
                           <th>Rasa</th>
-                          <th>Aksi</th>
+                          <th colspan="2" class="text-center">Aksi</th>
                           {{-- <th>Created</th>
                           <th>Status</th> --}}
                         </tr>
@@ -162,16 +162,20 @@
                         <tr>
                           <td>{{ $t->kode }}</td>
                           <td>{{ $t->rasa }}</td>
-                          <td>
+                          <td class="col-1">
                             <a href="/tembakau/{{ $t->id }}/edit">
                               <button type="button" class="btn btn-dark btn-icon-text btn-sm">Edit
                             </button>
                             </a>
-                            <a href="">
-                              <button type="button" class="btn btn-danger btn-icon-text btn-sm">
-                                Warning
+                          </td>
+                          <td class="col-1">
+                            <form action="/tembakau/{{ $t->id }}" method="POST">
+                              @csrf
+                              @method('delete')
+                              <button type="submit" class="btn btn-danger btn-icon-text btn-sm" value="Delete">
+                                Hapus
                               </button>
-                            </a>
+                            </form>
                           </td>
                         </tr>                        
                         @endforeach
