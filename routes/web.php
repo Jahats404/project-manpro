@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [LoginController::class, 'login'])->name('login');
-Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::post('/actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 
 // Route::get('/', [LoginController::class, 'halamanLogin'])->name('login');
 // Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/tembakau/{id}', [TembakauController::class, 'update'])->name('update');
     Route::delete('/tembakau/{id}', [TembakauController::class, 'destroy'])->name('destroy');
     Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+    Route::get('/tembakau/search', [TembakauController::class, 'search'])->name('search');
+
 });
 
 

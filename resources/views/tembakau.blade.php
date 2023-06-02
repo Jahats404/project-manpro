@@ -51,7 +51,21 @@
                 <div class="card-body">
                   <h4 class="card-title">Basic Table</h4>
                   <p class="card-description">
-                    Add class <code>.table</code>
+                    <form action="/tembakau/search" method="GET">
+                      @csrf
+                      <ul class="navbar-nav mr-lg-2">
+                        <li class="nav-item nav-search d-none d-lg-block">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="search">
+                                <i class="icon-search"></i>
+                              </span>
+                            </div>
+                            <input type="search" class="form-control" name="search" placeholder="Cari Tembakau" aria-label="search" aria-describedby="search">
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
                   </p>
                   <div class="table-responsive">
                     <table class="table table-striped">

@@ -41,4 +41,15 @@ class TembakauController extends Controller
         $tembakau -> delete();
         return redirect('/tembakau');
     }
+
+    public function search(Request $request){
+        if($request->has('search')){
+            $tembakau = Tembakau::where('rasa','LIKE','%'.$request->search.'%')->get();
+        }
+        else{
+            $tembakau = Tembakau::all();
+        }
+
+        return view('tembakau', ['tembakau' => $tembakau]);
+    }
 }
