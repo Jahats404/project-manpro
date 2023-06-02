@@ -17,7 +17,12 @@
           Login triji
         </div>
         <div class="col-lg-12 login-form">
-          <form action="{{ route('postLogin') }}" method="POST">
+          @if(session('error'))
+            <div class="alert alert-danger">
+                <b>Opps!</b> {{session('error')}}
+            </div>
+            @endif
+          <form action="{{ route('actionlogin') }}" method="POST">
             @csrf
             <div class="form-group">
               <label class="form-control-label">Username</label>

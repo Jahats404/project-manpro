@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
+// Route::get('/', [LoginController::class, 'halamanLogin'])->name('login');
+// Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
 Route::get('/index', [HomeController::class, 'index'])->name('index');
-Route::get('/', [LoginController::class, 'halamanLogin'])->name('login');
-Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('postLogin');
 // Route::get('/kasir', [HomeController::class, 'kasir'])->name('kasir');
 Route::get('/tembakau', [TembakauController::class, 'mbako'])->name('tembakau');
 Route::get('/tembakau/create', [TembakauController::class, 'create'])->name('create');
