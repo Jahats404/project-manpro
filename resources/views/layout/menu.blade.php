@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="user-profile">
       <div class="user-image">
-        <img src="../../images/faces/face28.png">
+        <img src="">
       </div>
       <div class="user-name">
           Edward Spencer
@@ -23,7 +23,7 @@
           <span class="menu-title">Tembakau</span>
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="../../pages/forms/basic_elements.html">
           <i class="icon-file menu-icon"></i>
           <span class="menu-title">Form elements</span>
@@ -68,6 +68,6 @@
           <i class="icon-book menu-icon"></i>
           <span class="menu-title">Documentation</span>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </nav>
