@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('tembakau', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
-            $table->string('rasa');
+            $table->string('id_tembakau');
+            $table->string('nama_tembakau');
+            $table->integer('stok_tembakau');
+            $table->integer('harga_tembakau');
             $table->timestamps();
         });
     }

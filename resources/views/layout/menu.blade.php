@@ -18,19 +18,19 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('tembakau') }}">
+        <a class="nav-link" href="{{ route('create') }}">
           <i class="icon-file-add menu-icon"></i>
+          <span class="menu-title">Tambah Stok Barang</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('tembakau') }}">
+          <i class="icon-box menu-icon"></i>
           <span class="menu-title">Kelola Stok Barang</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
-          <i class="icon-box menu-icon"></i>
-          <span class="menu-title">Stok Barang</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/laporan">
           <i class="icon-file menu-icon"></i>
           <span class="menu-title">Laporan</span>
         </a>

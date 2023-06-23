@@ -24,88 +24,52 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">            
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Default form</h4>
-                  <p class="card-description">
-                    Basic form layout
-                  </p>
-                  <form method="POST" action="/tembakau/store" class="forms-sample">
-                    @csrf
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">ID</label>
-                      <input type="text" class="form-control" name="kode" id="exampleInputUsername1" placeholder="ID">
-                    </div>
-                    <div class="form-group">
-                      <label for="rasa">Rasa</label>
-                      <input type="text" class="form-control" name="rasa" id="rasa" placeholder="rasa">
-                    </div>                                        
-                    <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> Tambahkan</button>                    
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Basic Table</h4>
-                  <p class="card-description">
-                    <form action="/tembakau/search" method="GET">
-                      @csrf
-                      <ul class="navbar-nav mr-lg-2">
-                        <li class="nav-item nav-search d-none d-lg-block">
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="search">
-                                <i class="icon-search"></i>
-                              </span>
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">LAPORAN PENJUALAN TEMBKAU</h4>
+                    <hr class="sidebar-divider d-none d-md-block">
+                    <p class="card-description">
+                      <form action="/tembakau/search" method="GET">
+                        @csrf
+                        <ul class="navbar-nav mr-lg-2">
+                          <li class="nav-item nav-search d-none d-lg-block">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="search">
+                                  <i class="icon-search"></i>
+                                </span>
+                              </div>
+                              <input type="search" class="form-control" name="search" placeholder="Cari Tembakau" aria-label="search" aria-describedby="search">
                             </div>
-                            <input type="search" class="form-control" name="search" placeholder="Cari Tembakau" aria-label="search" aria-describedby="search">
-                          </div>
-                        </li>
-                      </ul>
-                    </form>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr class="table-primary">
-                          <th>ID</th>
-                          <th>Rasa</th>
-                          <th colspan="2" class="text-center">Aksi</th>
-                          {{-- <th>Created</th>
-                          <th>Status</th> --}}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach ($tembakau as $t)
-                        <tr>
-                          <td>{{ $t->kode }}</td>
-                          <td>{{ $t->rasa }}</td>
-                          <td class="col-1">
-                            <a href="/tembakau/{{ $t->id }}/edit">
-                              <button type="button" class="btn btn-dark btn-icon-text btn-sm">Edit
-                            </button>
-                            </a>
-                          </td>
-                          <td class="col-1">
-                            <form action="/tembakau/{{ $t->id }}" method="POST">
-                              @csrf
-                              @method('delete')
-                              <button type="submit" class="btn btn-danger btn-icon-text btn-sm" value="Delete">
-                                Hapus
-                              </button>
-                            </form>
-                          </td>
-                        </tr>                        
-                        @endforeach
-                      </tbody>
-                    </table>
+                          </li>
+                        </ul>
+                      </form>
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr class="table-primary">
+                            <th>ID TEMBAKAU</th>
+                            <th>NAMA TEMBAKAU</th>
+                            <th>STOK TERJUAL</th>
+                            <th>TOTAL PENDAPATAN</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>                       
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            
             {{-- <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
