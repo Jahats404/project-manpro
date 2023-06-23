@@ -27,36 +27,29 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body ">
-                  <h3 class="card-title text-center">KASIR</h3>
+                  <h4 class="card-title text-center">TAMBAH DATA TEMBAKAU</h4>
                   <hr class="sidebar-divider d-none d-md-block">
-                  <form method="POST" action="/tembakau/store" class="forms-sample">
+                  <form method="POST" action="/store" class="forms-sample">
                     @csrf
                     <div class="form-group">
-                      <label for="exampleInputUsername1">NAMA TEMBAKAU</label>
-                      <select name="nama_tembakau" type="text" class="form-control">
-                        <option value="">Mohon Inputkan Nama Tembakau</option>
-                        <option value="">Tembakau Gorilla</option>
-                        <option value="">Tembakau Gayo</option>
-                        <option value="">Narkoba</option>
-                      </select>
+                      <label for="exampleInputUsername1">ID TEMBAKAU</label>
+                      <input type="text" class="form-control" name="id_tembakau">
                     </div>
                     <div class="form-group">
-                      <label for="rasa">JUMLAH BARANG</label>
-                      <input type="text" class="form-control" name="rasa" id="rasa" >
+                      <label for="rasa">NAMA TEMBAKAU</label>
+                      <input type="text" class="form-control" name="nama_tembakau">
+                    </div> 
+                    <div class="form-group">
+                      <label for="rasa">STOK TEMBAKAU</label>
+                      <input type="text" class="form-control" name="stok_tembakau">
+                    </div>   
+                    <div class="form-group">
+                      <label for="rasa">HARGA TEMBAKAU</label>
+                      <input type="text" class="form-control" name="harga_tembakau">
                     </div> 
                     <div class="text-center">
                       <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> Tambahkan</button>  
                     </div>                                                        
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body ">
-                  <h4 class="card-title text-center">NOTA</h4>
-                  <hr class="sidebar-divider d-none d-md-block">
-                  <form method="POST" action="/tembakau/store" class="forms-sample">                                                 
                   </form>
                 </div>
               </div>

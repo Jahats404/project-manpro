@@ -24,43 +24,51 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">            
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body ">
-                  <h3 class="card-title text-center">KASIR</h3>
-                  <hr class="sidebar-divider d-none d-md-block">
-                  <form method="POST" action="/tembakau/store" class="forms-sample">
-                    @csrf
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">NAMA TEMBAKAU</label>
-                      <select name="nama_tembakau" type="text" class="form-control">
-                        <option value="">Mohon Inputkan Nama Tembakau</option>
-                        <option value="">Tembakau Gorilla</option>
-                        <option value="">Tembakau Gayo</option>
-                        <option value="">Narkoba</option>
-                      </select>
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">LAPORAN PENJUALAN TEMBKAU</h4>
+                    <hr class="sidebar-divider d-none d-md-block">
+                    <p class="card-description">
+                      <form action="/tembakau/search" method="GET">
+                        @csrf
+                        <ul class="navbar-nav mr-lg-2">
+                          <li class="nav-item nav-search d-none d-lg-block">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="search">
+                                  <i class="icon-search"></i>
+                                </span>
+                              </div>
+                              <input type="search" class="form-control" name="search" placeholder="Cari Tembakau" aria-label="search" aria-describedby="search">
+                            </div>
+                          </li>
+                        </ul>
+                      </form>
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr class="table-primary">
+                            <th>ID TEMBAKAU</th>
+                            <th>NAMA TEMBAKAU</th>
+                            <th>STOK TERJUAL</th>
+                            <th>TOTAL PENDAPATAN</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>                       
+                        </tbody>
+                      </table>
                     </div>
-                    <div class="form-group">
-                      <label for="rasa">JUMLAH BARANG</label>
-                      <input type="text" class="form-control" name="rasa" id="rasa" >
-                    </div> 
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> Tambahkan</button>  
-                    </div>                                                        
-                  </form>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body ">
-                  <h4 class="card-title text-center">NOTA</h4>
-                  <hr class="sidebar-divider d-none d-md-block">
-                  <form method="POST" action="/tembakau/store" class="forms-sample">                                                 
-                  </form>
-                </div>
-              </div>
-            </div>
             
             {{-- <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">

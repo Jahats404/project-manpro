@@ -1,26 +1,38 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="user-profile">
       <div class="user-image">
-        <img src="">
+        <img src="../../images/mail.jpg">
       </div>
       <div class="user-name">
-          Edward Spencer
+          ADMINISTRATOR
       </div>
       <div class="user-designation">
-          Developer
+          TRIJI Tembakau 
       </div>
     </div>
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="{{ route('index') }}">
-          <i class="icon-box menu-icon"></i>
-          <span class="menu-title">Dashboard</span>
+          <i class="icon-target menu-icon"></i>
+          <span class="menu-title">KASIR</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('create') }}">
+          <i class="icon-file-add menu-icon"></i>
+          <span class="menu-title">Tambah Stok Barang</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('tembakau') }}">
+          <i class="icon-box menu-icon"></i>
+          <span class="menu-title">Kelola Stok Barang</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/laporan">
           <i class="icon-file menu-icon"></i>
-          <span class="menu-title">Tembakau</span>
+          <span class="menu-title">Laporan</span>
         </a>
       </li>
       {{-- <li class="nav-item">

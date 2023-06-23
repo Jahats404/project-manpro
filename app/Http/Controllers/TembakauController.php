@@ -14,11 +14,11 @@ class TembakauController extends Controller
 
     public function mbako(){
         $tembakau = Tembakau::all();
-        return view('tembakau', compact(['tembakau']));        
+        return view('stok', compact(['tembakau']));        
     }
 
     public function create(){
-        return view('create-tembakau');
+        return view('inputMbako');
     }
 
     public function store(Request $request){        
@@ -53,7 +53,7 @@ class TembakauController extends Controller
 
     public function search(Request $request){
         if($request->has('search')){
-            $tembakau = Tembakau::where('rasa','LIKE','%'.$request->search.'%')->get();
+            $tembakau = Tembakau::where('nama_tembakau','LIKE','%'.$request->search.'%')->get();
         }
         else{
             $tembakau = Tembakau::all();

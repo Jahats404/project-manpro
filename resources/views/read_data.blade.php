@@ -24,44 +24,126 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">            
-            <div class="col-md-12 grid-margin stretch-card">
+            <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
-                <div class="card-body ">
-                  <h3 class="card-title text-center">KASIR</h3>
-                  <hr class="sidebar-divider d-none d-md-block">
+                <div class="card-body">
+                  <h4 class="card-title">Default form</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
                   <form method="POST" action="/tembakau/store" class="forms-sample">
                     @csrf
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">NAMA TEMBAKAU</label>
-                      <select name="nama_tembakau" type="text" class="form-control">
-                        <option value="">Mohon Inputkan Nama Tembakau</option>
-                        <option value="">Tembakau Gorilla</option>
-                        <option value="">Tembakau Gayo</option>
-                        <option value="">Narkoba</option>
-                      </select>
+                    <div class="after-add-more">
+                      <div class="form-group">
+                        <label for="exampleInputUsername1">ID</label>
+                        <input type="text" class="form-control" name="kode1" id="exampleInputUsername1" placeholder="ID">
+                      </div>
+                      <div class="form-group">
+                        <label for="rasa">Rasa</label>
+                        <input type="text" class="form-control" name="rasa1" id="rasa" placeholder="rasa">
+                      </div>                                        
+                      <button type="button" class="btn btn-inverse-primary btn-fw add-more"><i class="icon-square-plus"></i> Tambahkan</button>
+                      <hr>
                     </div>
-                    <div class="form-group">
-                      <label for="rasa">JUMLAH BARANG</label>
-                      <input type="text" class="form-control" name="rasa" id="rasa" >
-                    </div> 
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> Tambahkan</button>  
-                    </div>                                                        
+                    <button type="submit" class="btn btn-inverse-primary btn-fw"><i class="icon-square-plus"></i> submit</button>
+                    <br>
                   </form>
+
+                  {{-- copy form --}}
+
+                  <div class="copy hide" hidden>
+                    <div class="control-group">
+                      <div class="form-group">
+                        <label for="exampleInputUsername1">ID</label>
+                        <input type="text" class="form-control" name="kode2" id="exampleInputUsername1" placeholder="ID">
+                      </div>
+                      <div class="form-group">
+                        <label for="rasa">Rasa</label>
+                        <input type="text" class="form-control" name="rasa2" id="rasa" placeholder="rasa">
+                      </div>                                        
+                      <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                      <hr>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 grid-margin stretch-card">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+            <script type="text/javascript">
+              $(document).ready(function() {
+                $(".add-more").click(function(){ 
+                    var html = $(".copy").html();
+                    $(".after-add-more").after(html);
+                });
+          
+                // saat tombol remove dklik control group akan dihapus 
+                $("body").on("click",".remove",function(){ 
+                    $(this).parents(".control-group").remove();
+                });
+              });
+          </script>
+
+
+            <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
-                <div class="card-body ">
-                  <h4 class="card-title text-center">NOTA</h4>
-                  <hr class="sidebar-divider d-none d-md-block">
-                  <form method="POST" action="/tembakau/store" class="forms-sample">                                                 
-                  </form>
+                <div class="card-body">
+                  <h4 class="card-title">Basic Table</h4>
+                  <p class="card-description">
+                    <form action="/tembakau/search" method="GET">
+                      @csrf
+                      <ul class="navbar-nav mr-lg-2">
+                        <li class="nav-item nav-search d-none d-lg-block">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="search">
+                                <i class="icon-search"></i>
+                              </span>
+                            </div>
+                            <input type="search" class="form-control" name="search" placeholder="Cari Tembakau" aria-label="search" aria-describedby="search">
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr class="table-primary">
+                          <th>ID</th>
+                          <th>Rasa</th>
+                          <th colspan="2" class="text-center">Aksi</th>
+                          {{-- <th>Created</th>
+                          <th>Status</th> --}}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($tembakau as $t)
+                        <tr>
+                          <td>{{ $t->kode }}</td>
+                          <td>{{ $t->rasa }}</td>
+                          <td class="col-1">
+                            <a href="/tembakau/{{ $t->kode }}/edit">
+                              <button type="button" class="btn btn-dark btn-icon-text btn-sm">Edit
+                            </button>
+                            </a>
+                          </td>
+                          <td class="col-1">
+                            <form action="/tembakau/{{ $t->kode }}" method="POST">
+                              @csrf
+                              @method('delete')
+                              <button type="submit" class="btn btn-danger btn-icon-text btn-sm" value="Delete">
+                                Hapus
+                              </button>
+                            </form>
+                          </td>
+                        </tr>                        
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-            
             {{-- <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">

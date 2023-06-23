@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tembakau', function (Blueprint $table) {
-            $table->uuid('kode')->primary()->nullable();
-            $table->string('rasa');
+            $table->id();
+            $table->string('id_tembakau');
+            $table->string('nama_tembakau');
+            $table->integer('stok_tembakau');
+            $table->integer('harga_tembakau');
             $table->timestamps();
         });
     }

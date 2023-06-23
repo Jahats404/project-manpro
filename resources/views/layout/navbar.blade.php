@@ -5,7 +5,7 @@
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-        <span class="icon-menu"></span>
+        <span class="icon-align-justify"></span>
       </button>
       {{-- <ul class="navbar-nav mr-lg-2">
         <li class="nav-item nav-search d-none d-lg-block">
@@ -72,12 +72,8 @@
             <i class="icon-cog"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-            <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-            {{-- <a class="dropdown-item preview-item">               
-                <i class="icon-head"></i> Profile
-            </a> --}}
             <a class="dropdown-item preview-item" href="{{ route('actionlogout') }}">
-                <i class="icon-inbox"></i> Logout
+                <i class="icon-power"></i> Logout
             </a>
           </div>
         </li>
