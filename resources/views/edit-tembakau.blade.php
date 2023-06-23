@@ -31,7 +31,7 @@
                   <p class="card-description">
                     Edit Tembakau
                   </p>
-                  <form class="forms-sample" action="/tembakau/{{ $tembakau->id }}" method="POST">
+                  <form class="forms-sample" action="/tembakau/{{ $tembakau->kode }}" method="POST">
                     @method('put')
                     @csrf
                     <div class="form-group">

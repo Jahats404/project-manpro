@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Tembakau;
-
 use function Ramsey\Uuid\v1;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class TembakauController extends Controller
 {
@@ -21,12 +22,20 @@ class TembakauController extends Controller
     }
 
     public function store(Request $request){        
-        Tembakau::create($request->except(['_token','submit']));
+        DB::table('tembakau')->insert([
+            ['kode' => $request->kode1,
+             'rasa' => $request->rasa1
+            ],
+            ['kode' => $request->kode2,
+             'rasa' => $request->rasa2
+            ],
+        ]);
+        // Tembakau::create($request->except(['_token','submit']));
         return redirect('/tembakau');
     }
 
-    public function edit($id){
-        $tembakau = Tembakau::find($id);
+    public function edit($kode){
+        $tembakau = Tembakau::find($kode);
         return view('edit-tembakau',compact(['tembakau']));
     }
 

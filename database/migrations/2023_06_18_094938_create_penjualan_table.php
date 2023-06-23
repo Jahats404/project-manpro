@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tembakau', function (Blueprint $table) {
-            $table->uuid('kode')->primary()->nullable();
+        Schema::create('penjualan', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('kode');
             $table->string('rasa');
             $table->timestamps();
+
+            $table->foreign('kode')->references('kode')->on('tembakau');
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tembakau');
+        Schema::dropIfExists('penjualan');
     }
 };

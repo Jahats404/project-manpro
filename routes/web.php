@@ -27,15 +27,15 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/tembakau', [TembakauController::class, 'mbako'])->name('tembakau');
     Route::get('/tembakau/create', [TembakauController::class, 'create'])->name('create');
     Route::post('/tembakau/store', [TembakauController::class, 'store'])->name('store');
-    Route::get('/tembakau/{id}/edit', [TembakauController::class, 'edit'])->name('edit');
-    Route::put('/tembakau/{id}', [TembakauController::class, 'update'])->name('update');
-    Route::delete('/tembakau/{id}', [TembakauController::class, 'destroy'])->name('destroy');
+    Route::get('/tembakau/{kode}/edit', [TembakauController::class, 'edit'])->name('edit');
+    Route::put('/tembakau/{kode}', [TembakauController::class, 'update'])->name('update');
+    Route::delete('/tembakau/{kode}', [TembakauController::class, 'destroy'])->name('destroy');
     Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
     Route::get('/tembakau/search', [TembakauController::class, 'search'])->name('search');
 
 });
 
 
-// Route::get('/update', function () {
-//     return view('update');
-// });
+Route::get('/addmore', function () {
+    return view('addmore');
+});

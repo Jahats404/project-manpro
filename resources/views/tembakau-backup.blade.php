@@ -36,11 +36,11 @@
                     <div class="after-add-more">
                       <div class="form-group">
                         <label for="exampleInputUsername1">ID</label>
-                        <input type="text" class="form-control" name="kode1" id="exampleInputUsername1" placeholder="ID">
+                        <input type="text" class="form-control" name="kode" id="exampleInputUsername1" placeholder="ID">
                       </div>
                       <div class="form-group">
                         <label for="rasa">Rasa</label>
-                        <input type="text" class="form-control" name="rasa1" id="rasa" placeholder="rasa">
+                        <input type="text" class="form-control" name="rasa" id="rasa" placeholder="rasa">
                       </div>                                        
                       <button type="button" class="btn btn-inverse-primary btn-fw add-more"><i class="icon-square-plus"></i> Tambahkan</button>
                       <hr>
@@ -55,11 +55,11 @@
                     <div class="control-group">
                       <div class="form-group">
                         <label for="exampleInputUsername1">ID</label>
-                        <input type="text" class="form-control" name="kode2" id="exampleInputUsername1" placeholder="ID">
+                        <input type="text" class="form-control" name="kode" id="exampleInputUsername1" placeholder="ID">
                       </div>
                       <div class="form-group">
                         <label for="rasa">Rasa</label>
-                        <input type="text" class="form-control" name="rasa2" id="rasa" placeholder="rasa">
+                        <input type="text" class="form-control" name="rasa" id="rasa" placeholder="rasa">
                       </div>                                        
                       <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
                       <hr>
@@ -122,13 +122,13 @@
                           <td>{{ $t->kode }}</td>
                           <td>{{ $t->rasa }}</td>
                           <td class="col-1">
-                            <a href="/tembakau/{{ $t->kode }}/edit">
+                            <a href="/tembakau/{{ $t->id }}/edit">
                               <button type="button" class="btn btn-dark btn-icon-text btn-sm">Edit
                             </button>
                             </a>
                           </td>
                           <td class="col-1">
-                            <form action="/tembakau/{{ $t->kode }}" method="POST">
+                            <form action="/tembakau/{{ $t->id }}" method="POST">
                               @csrf
                               @method('delete')
                               <button type="submit" class="btn btn-danger btn-icon-text btn-sm" value="Delete">
